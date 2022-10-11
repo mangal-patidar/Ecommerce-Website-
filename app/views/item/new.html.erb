@@ -1,0 +1,30 @@
+<div class="container">   
+  <%= form_for @item, url: {action: :create} do |f| %>   
+      <div>   
+        <h3>Add a item</h3>   
+      </div>   
+      <div>   
+        <p>   
+          <%= "<div>#{@item.errors.full_messages.first}</div>".html_safe if @item.errors.any? %>   
+        <div>   
+            <label>Item Name</label>   
+              <%= f.text_field :name %>   
+        </div>   
+  
+        <div>   
+             <label>Price</label>   
+             <%= f.text_field :price %>   
+        </div>   
+  
+        <div>   
+           <label>Description</label>   
+              <%= f.text_field :description %>   
+        </div>   
+         </p>   
+      </div>   
+      <div>   
+        <%= link_to 'Back', { controller: 'item', action: 'index'} %>   
+        <%= f.submit 'Create item' %>   
+      </div>   
+  <% end %>   
+</div>  

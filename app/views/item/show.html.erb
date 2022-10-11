@@ -1,0 +1,21 @@
+<%= render 'header' %>
+<div class="container card" >               
+  <div>   
+    <label>item Name</label>   
+    <%= @item.name %>   
+  </div>   
+  
+  <div>   
+    <label>Price</label>   
+    <%= @item.price %>   
+  </div>   
+            
+  <div>   
+    <label>Description</label>   
+    <%= @item.description %>   
+  </div>   
+         
+    <div>   
+      <%= link_to 'Back', { controller: 'item', action: 'index'} %>   
+    </div>   
+</div>  

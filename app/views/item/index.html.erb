@@ -1,0 +1,26 @@
+<%= render 'header' %>
+<div class="container card bg-light">
+  <h3>Item LIST</h3>   
+    <div>   
+       <%= link_to 'Add item', new_item_path %>  
+    </div>   
+      <br> 
+
+    <div class="row">
+          <% @item.each do |item| %> 
+            <div class="col-md-3">
+              <div class="card" style="width: 16rem; margin:10px">
+               <%# <img src="/images/ecom.jpg" class="img-fluid" alt="..."> %>
+               <img src="asseste/images/ecom.jpg" alt="....." />
+                <div class="card-body bg-primary  ">
+                  <h5 class="card-title"><%= item.name %></h5>
+                  <h6 class="card-title">Price <%= item.price %></h6>
+                  <p class="card-text"><%= item.description %></p>
+                </div>
+              </div>
+            </div>
+            <br>
+          <% end %>
+        
+    </div>
+</div>
