@@ -10,12 +10,13 @@
           <% @item.each do |item| %> 
             <div class="col-md-3">
               <div class="card" style="width: 16rem; margin:10px">
-               <%# <img src="/images/ecom.jpg" class="img-fluid" alt="..."> %>
-               <img src="asseste/images/ecom.jpg" alt="....." />
-                <div class="card-body bg-primary  ">
+               <img src="assets/ecom.jpg" alt="this is my image" />
+                <div class="card-body bg-light  ">
                   <h5 class="card-title"><%= item.name %></h5>
                   <h6 class="card-title">Price <%= item.price %></h6>
                   <p class="card-text"><%= item.description %></p>
+                  <%= link_to 'Delete', item_path(item), method: :delete %>   
+                  <a href="#" class="btn btn-primary">Add to card</a>
                 </div>
               </div>
             </div>

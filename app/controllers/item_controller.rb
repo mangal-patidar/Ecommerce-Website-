@@ -23,15 +23,19 @@ class ItemController < ApplicationController
         end   
     end 
 
-    def destroy  
-        @item = Item.find(params[:id])   
-        if @item.update_attributes(item_params)   
-          flash[:notice] = 'Item updated!'   
-          redirect_to root_path   
-        else   
-          flash[:error] = 'Failed to edit item!'   
-          render :edit   
-        end   
+    def destroy 
+      @item = Item.find(params[:id])
+      @item.destroy
+      flash[:success] = "The item was successfully destroyed."
+      redirect_to root_path
+        # @item = Item.find(params[:id])   
+        # if @item.update_attributes(item_params)   
+        #   flash[:notice] = 'Item deleted!'   
+        #   redirect_to root_path   
+        # else   
+        #   flash[:error] = 'Failed to edit item!'   
+        #   render :edit   
+        # end   
     end
 
     def item_params   
