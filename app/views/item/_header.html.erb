@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg  bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">eCommerce</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,8 +9,12 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+        <li class="nav-item active">
+        <% if admin_user_signed_in? %>
+          <%= link_to "Sign Out", destroy_admin_user_session_path, method: :delete, class: "nav-link" %>
+        <% else %>
+          <%= link_to "Sign In", new_admin_user_session_path, class: "nav-link" %>
+        <% end %>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
